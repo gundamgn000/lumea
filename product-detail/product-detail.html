@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ÉCLAT Solitaire Ring — LUMÉA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/product.css">
+
+<style>
+/* ==========================================================================
+   LUMÉA Product Detail — Gallery Size + Thumbnail Carousel Fix
+   ========================================================================== */
+@media (min-width: 861px) {
+  .product-page .gallery-column {
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+
+  .product-page .main-image {
+    width: min(100%, 760px);
+    height: min(62vh, 620px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product-page .thumb-row {
+    width: min(100%, 340px);
+    margin: 12px auto 0;
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+    gap: 8px;
+  }
+
+  .product-page .thumb-nav {
+    width: 30px;
+    min-height: 78px;
+    height: 78px;
+    padding: 0;
+  }
+
+  .product-page .thumb-viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .product-page .thumb-track {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 8px;
+    width: max-content;
+    transition: transform .3s ease;
+    will-change: transform;
+  }
+
+  .product-page .thumb {
+    flex: 0 0 78px;
+    width: 78px;
+    height: 78px;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 860px) {
+  .product-page .thumb-row {
+    width: min(100%, 320px);
+    margin: 12px auto 0;
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+    gap: 8px;
+  }
+
+  .product-page .thumb-nav {
+    width: 28px;
+    min-height: 72px;
+    height: 72px;
+    padding: 0;
+  }
+
+  .product-page .thumb-viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .product-page .thumb-track {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 8px;
+    width: max-content;
+    transition: transform .3s ease;
+    will-change: transform;
+  }
+
+  .product-page .thumb {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    aspect-ratio: 1;
+  }
+}
+
+.product-page .thumb-nav:disabled {
+  opacity: .28;
+  cursor: default;
+  pointer-events: none;
+}
+</style>
+
+</head>
+<body>
+<!-- 跑馬燈 -->
+<div class="top-marquee">
+<div class="marquee-track">
+<span>LUMÉA Fine Jewelry · Taipei</span>
+<span>滿 NT$ 8,000 享精品配送</span>
+<span>預約私人鑑賞 · Private Viewing</span>
+<span>18K Gold · Natural Stone · Hand Finished</span>
+<span>LUMÉA Fine Jewelry · Taipei</span>
+<span>滿 NT$ 8,000 享精品配送</span>
+<span>預約私人鑑賞 · Private Viewing</span>
+<span>18K Gold · Natural Stone · Hand Finished</span>
+</div>
+</div>
+<!-- HEADER -->
+<header class="header">
+<div class="header-container">
+<a class="logo" href="../index/index.html">
+<img class="logo-img logo-light" src="../assets/logo/logo.png" alt="LUMÉA logo">
+<img class="logo-img logo-dark" src="../assets/logo/logo02.png" alt="LUMÉA logo">
+<span class="logo-text">LUMÉA Atelier</span>
+<span class="dot"></span>
+</a>
+<button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" id="menuToggle">
+<span></span><span></span><span></span>
+</button>
+<nav class="nav-menu">
+<a href="../index/index.html">首頁</a>
+<a href="../about/about.html">品牌故事</a>
+<div class="nav-dropdown">
+<a class="nav-dropdown-trigger active" href="../product/product.html">珠寶系列</a>
+<div class="nav-dropdown-menu">
+<a href="../product/product.html">全系列</a>
+<a href="../product/product.html?category=tees">戒指 / Rings</a>
+<a href="../product/product.html?category=outerwear">項鍊 / Necklaces</a>
+<a href="../product/product.html?category=bottoms">耳飾 / Earrings</a>
+<a href="../product/product.html?category=accessories">手鍊 / Bracelets</a>
+</div>
+</div>
+<a href="#footer">預約鑑賞</a>
+</nav>
+<div class="nav-icons">
+<a href="#">搜尋</a>
+<a href="#">會員</a>
+<a href="#">收藏袋<span class="cart-count">[02]</span></a>
+</div>
+</div>
+</header>
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+<div class="mobile-drawer-inner">
+<a class="drawer-link" href="../index/index.html">首頁</a>
+<a class="drawer-link" href="../about/about.html">品牌故事</a>
+<div class="drawer-dropdown">
+<button class="drawer-dropdown-toggle active" id="drawerDropdownToggle" type="button">
+          珠寶系列 <span class="drawer-arrow">⌄</span>
+</button>
+<div class="drawer-submenu active" id="drawerSubmenu">
+<a class="drawer-sublink" href="../product/product.html">全系列</a>
+<a class="drawer-sublink" href="../product/product.html?category=tees">戒指 / Rings</a>
+<a class="drawer-sublink" href="../product/product.html?category=outerwear">項鍊 / Necklaces</a>
+<a class="drawer-sublink" href="../product/product.html?category=bottoms">耳飾 / Earrings</a>
+<a class="drawer-sublink" href="../product/product.html?category=accessories">手鍊 / Bracelets</a>
+</div>
+</div>
+<a class="drawer-link" href="#footer">預約鑑賞</a>
+<div class="mobile-drawer-icons">
+<a href="#">搜尋</a>
+<a href="#">會員</a>
+<a href="#">收藏袋 (2)</a>
+</div>
+</div>
+</div>
+
+<main class="product-page">
+  <section class="product-layout">
+    <div class="gallery-column">
+      <button class="main-image" id="mainImageButton" aria-label="放大商品圖片">
+        <img id="mainImage" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=90" alt="ÉCLAT Solitaire Ring">
+        <span class="zoom-label">VIEW DETAIL +</span>
+      </button>
+      <div class="thumb-row">
+        <button class="thumb-nav" id="thumbPrev" aria-label="上一張">←</button>
+        <div class="thumb-viewport">
+          <div class="thumb-track" id="thumbTrack">
+            <button class="thumb active" data-index="0"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=82" alt="戒指縮圖 1"></button>
+            <button class="thumb" data-index="1"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=82" alt="戒指縮圖 2"></button>
+            <button class="thumb" data-index="2"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500&q=82" alt="戒指縮圖 3"></button>
+            <button class="thumb" data-index="3"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=500&q=82" alt="戒指縮圖 4"></button>
+          </div>
+        </div>
+        <button class="thumb-nav" id="thumbNext" aria-label="下一張">→</button>
+      </div>
+    </div>
+
+    <aside class="product-info">
+      <div class="breadcrumb">FINE JEWELRY / RINGS / 01</div>
+      <p class="eyebrow">LUMÉA SIGNATURE</p>
+      <h1>ÉCLAT<br><em>Solitaire Ring</em></h1>
+      <p class="zh-name">璀璨單鑽戒指</p>
+      <div class="price">NT$ 68,000</div>
+      <p class="intro">以最少的線條托起光。六爪鑲座刻意降低存在感，讓鑽石像懸浮在指間，只留下純粹的亮度與比例。</p>
+
+      <dl class="spec-list">
+        <div><dt>Material</dt><dd>18K White Gold</dd></div>
+        <div><dt>Diamond</dt><dd>0.50 ct · VS / F</dd></div>
+        <div><dt>Finish</dt><dd>High Polish</dd></div>
+        <div><dt>Made in</dt><dd>Taiwan</dd></div>
+      </dl>
+
+      <div class="option-block">
+        <div class="option-head"><span>Ring Size</span><button class="size-guide">Size Guide</button></div>
+        <div class="sizes">
+          <button>8</button><button>9</button><button class="active">10</button><button>11</button><button>12</button><button>13</button>
+        </div>
+      </div>
+
+      <div class="purchase-row">
+        <div class="qty"><button id="minus">−</button><span id="qty">1</span><button id="plus">+</button></div>
+        <button class="add-cart">ADD TO BAG</button>
+      </div>
+      <p class="service-note">Complimentary insured delivery · Lifetime cleaning service</p>
+
+      <details open><summary>Craft & Setting</summary><p>每件作品皆由珠寶工匠逐件檢視爪位、拋光與鑽石水平，確保光線能從最大角度進入主石。</p></details>
+      <details><summary>Care</summary><p>建議避免香水、化學清潔劑與劇烈撞擊；可使用柔軟乾布日常擦拭。</p></details>
+    </aside>
+  </section>
+
+  <section class="recommend-section">
+  <div class="recommend-head">
+    <p>YOU MAY ALSO LIKE</p>
+    <h2>Quiet pieces,<br><em>lasting light.</em></h2>
+  </div>
+
+  <div class="recommend-carousel">
+    <button class="recommend-nav recommend-prev" id="recommendPrev" type="button" aria-label="上一個推薦商品">←</button>
+
+    <div class="recommend-viewport">
+      <div class="recommend-track" id="recommendTrack">
+        <a href="#" class="rec-card" data-index="0">
+          <div class="rec-image"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=86" alt="ÉCLAT Pendant"></div>
+          <div class="rec-meta"><span>ÉCLAT PENDANT</span><strong>NT$ 42,800</strong></div>
+        </a>
+        <a href="#" class="rec-card" data-index="1">
+          <div class="rec-image"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=86" alt="Linea Earrings"></div>
+          <div class="rec-meta"><span>LINEA EARRINGS</span><strong>NT$ 36,000</strong></div>
+        </a>
+        <a href="#" class="rec-card" data-index="2">
+          <div class="rec-image"><img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=900&q=86" alt="Arc Bracelet"></div>
+          <div class="rec-meta"><span>ARC BRACELET</span><strong>NT$ 29,800</strong></div>
+        </a>
+        <a href="#" class="rec-card" data-index="3">
+          <div class="rec-image"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=86" alt="Aube Drop Earrings"></div>
+          <div class="rec-meta"><span>AUBE DROP EARRINGS</span><strong>NT$ 24,800</strong></div>
+        </a>
+        <a href="#" class="rec-card" data-index="4">
+          <div class="rec-image"><img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=900&q=86" alt="Miroir Bangle"></div>
+          <div class="rec-meta"><span>MIROIR BANGLE</span><strong>NT$ 33,800</strong></div>
+        </a>
+      </div>
+    </div>
+
+    <button class="recommend-nav recommend-next" id="recommendNext" type="button" aria-label="下一個推薦商品">→</button>
+  </div>
+</section>
+</main>
+
+<footer class="footer-main" id="footer">
+<div class="footer-top-container">
+<div class="footer-brand">
+<a class="logo" href="../index/index.html">
+<img class="logo-img logo-light" src="../assets/logo/logo.png" alt="LUMÉA logo">
+<img class="logo-img logo-dark" src="../assets/logo/logo02.png" alt="LUMÉA logo">
+<span class="logo-text">LUMÉA Atelier</span>
+<span class="dot"></span>
+</a>
+<p>
+          來自台北的都市珠寶系列選品。<br/>
+          戒指、項鍊、耳飾與手鍊，慢慢收藏成自己的日常。<br/>
+          讓每一次移動都有清楚系統。
+        </p>
+</div>
+<div class="footer-column">
+<h4>快速連結</h4>
+<ul>
+<li><a href="../index/index.html">首頁</a></li>
+<li><a href="../about/about.html">品牌故事</a></li>
+<li><a href="../product/product.html">所有選品</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>條款與政策</h4>
+<ul>
+<li><a href="#">隱私權政策</a></li>
+<li><a href="#">服務條款</a></li>
+<li><a href="#">退換貨政策</a></li>
+<li><a href="#">免責聲明</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>追蹤我們</h4>
+<ul>
+<li><a href="#">Instagram</a></li>
+<li><a href="#">Line</a></li>
+<li><a href="#">Facebook</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>客服</h4>
+<p>hello@urban-gear.tpe</p>
+<p>週一至週五 / 11:00 - 19:00</p>
+<p>台北 · 台灣</p>
+</div>
+</div>
+<div class="footer-big-text">LUMÉA Atelier</div>
+<div class="footer-bottom">
+<p>© 2026 LUMÉA Atelier · All Rights Reserved.</p>
+</div>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-backdrop" id="lbBackdrop" aria-label="關閉"></button>
+  <div class="lb-dialog">
+    <button class="lb-close" id="lbClose">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev">←</button>
+    <img id="lbImage" alt="商品放大圖">
+    <button class="lb-nav lb-next" id="lbNext">→</button>
+  </div>
+</div>
+
+
+<script>
+  // ── Shared Header / Drawer ──
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
+  const drawerSubmenu = document.getElementById('drawerSubmenu');
+
+  if (menuToggle && mobileDrawer) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileDrawer.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+    });
+  }
+
+  if (drawerDropdownToggle && drawerSubmenu) {
+    drawerDropdownToggle.addEventListener('click', () => {
+      drawerDropdownToggle.classList.toggle('active');
+      drawerSubmenu.classList.toggle('active');
+    });
+  }
+</script>
+<script>
+const imgs=[
+'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=90',
+'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=90',
+'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=90',
+'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1400&q=90'
+];
+
+let idx = 0;
+const thumbs = [...document.querySelectorAll('.thumb')];
+const main = document.getElementById('mainImage');
+const thumbTrack = document.getElementById('thumbTrack');
+const thumbPrev = document.getElementById('thumbPrev');
+const thumbNext = document.getElementById('thumbNext');
+const thumbsPerView = 3;
+let currentThumbOffset = 0;
+
+function getThumbGap(){
+  if(!thumbTrack) return 0;
+  const styles = getComputedStyle(thumbTrack);
+  return parseFloat(styles.gap || styles.columnGap || 0) || 0;
+}
+
+function getThumbStep(){
+  if(!thumbs.length) return 0;
+  return thumbs[0].getBoundingClientRect().width + getThumbGap();
+}
+
+function getMaxThumbOffset(){
+  return Math.max(0, thumbs.length - thumbsPerView);
+}
+
+function syncThumbTrack(){
+  if(!thumbTrack || !thumbs.length) return;
+
+  const centerSlot = Math.floor(thumbsPerView / 2);
+  currentThumbOffset = Math.max(
+    0,
+    Math.min(idx - centerSlot, getMaxThumbOffset())
+  );
+
+  thumbTrack.style.transform =
+    `translateX(-${currentThumbOffset * getThumbStep()}px)`;
+
+  if(thumbPrev) thumbPrev.disabled = idx <= 0;
+  if(thumbNext) thumbNext.disabled = idx >= thumbs.length - 1;
+}
+
+function show(i){
+  idx = Math.max(0, Math.min(i, imgs.length - 1));
+  main.src = imgs[idx];
+
+  thumbs.forEach((t,n) => {
+    t.classList.toggle('active', n === idx);
+    t.setAttribute('aria-current', n === idx ? 'true' : 'false');
+  });
+
+  document.getElementById('lbImage').src = imgs[idx];
+  syncThumbTrack();
+}
+
+thumbs.forEach((t,i) => {
+  t.onclick = () => show(i);
+});
+
+thumbPrev.onclick = () => show(idx - 1);
+thumbNext.onclick = () => show(idx + 1);
+
+window.addEventListener('resize', syncThumbTrack);
+
+document.querySelectorAll('.sizes button').forEach(b =>
+  b.onclick = () => {
+    document.querySelectorAll('.sizes button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  }
+);
+
+let q = 1;
+const qEl = document.getElementById('qty');
+document.getElementById('minus').onclick = () => {
+  q = Math.max(1, q - 1);
+  qEl.textContent = q;
+};
+document.getElementById('plus').onclick = () => {
+  q++;
+  qEl.textContent = q;
+};
+
+const lb = document.getElementById('lightbox');
+
+function openLb(){
+  lb.classList.add('active');
+  lb.setAttribute('aria-hidden','false');
+  document.body.classList.add('no-scroll');
+  show(idx);
+}
+
+function closeLb(){
+  lb.classList.remove('active');
+  lb.setAttribute('aria-hidden','true');
+  document.body.classList.remove('no-scroll');
+}
+
+document.getElementById('mainImageButton').onclick = openLb;
+document.getElementById('lbClose').onclick = closeLb;
+document.getElementById('lbBackdrop').onclick = closeLb;
+document.getElementById('lbPrev').onclick = () => show(Math.max(0, idx - 1));
+document.getElementById('lbNext').onclick = () => show(Math.min(imgs.length - 1, idx + 1));
+
+window.addEventListener('keydown', e => {
+  if(!lb.classList.contains('active')) return;
+  if(e.key === 'Escape') closeLb();
+  if(e.key === 'ArrowLeft') show(Math.max(0, idx - 1));
+  if(e.key === 'ArrowRight') show(Math.min(imgs.length - 1, idx + 1));
+});
+
+show(0);
+</script>
+
+<script>
+  // ── Recommendation Carousel：固定顯示 3 張，每次平移 1 張 ──
+  const recommendTrack = document.getElementById('recommendTrack');
+  const recommendCards = [...document.querySelectorAll('.recommend-track .rec-card')];
+  const recommendPrev = document.getElementById('recommendPrev');
+  const recommendNext = document.getElementById('recommendNext');
+
+  let recommendOffset = 0;
+
+  function getRecommendPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 960) return 2;
+    return 3;
+  }
+
+  function getRecommendGap() {
+    if (!recommendTrack) return 0;
+    const styles = getComputedStyle(recommendTrack);
+    return parseFloat(styles.gap || styles.columnGap || 0) || 0;
+  }
+
+  function getRecommendStep() {
+    if (!recommendCards.length) return 0;
+    return recommendCards[0].getBoundingClientRect().width + getRecommendGap();
+  }
+
+  function getRecommendMaxOffset() {
+    return Math.max(0, recommendCards.length - getRecommendPerView());
+  }
+
+  function syncRecommendTrack() {
+    recommendOffset = Math.max(
+      0,
+      Math.min(recommendOffset, getRecommendMaxOffset())
+    );
+
+    recommendTrack.style.transform =
+      `translateX(-${recommendOffset * getRecommendStep()}px)`;
+
+    if (recommendPrev) recommendPrev.disabled = recommendOffset <= 0;
+    if (recommendNext) recommendNext.disabled = recommendOffset >= getRecommendMaxOffset();
+  }
+
+  if (recommendPrev) {
+    recommendPrev.addEventListener('click', () => {
+      recommendOffset -= 1;
+      syncRecommendTrack();
+    });
+  }
+
+  if (recommendNext) {
+    recommendNext.addEventListener('click', () => {
+      recommendOffset += 1;
+      syncRecommendTrack();
+    });
+  }
+
+  window.addEventListener('resize', syncRecommendTrack);
+  syncRecommendTrack();
+</script>
+
+<script src="../assets/js/theme-switcher.js"></script>
+</body></html>
