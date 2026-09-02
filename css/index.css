@@ -510,3 +510,74 @@
   border-color: #f4f1eb !important;
 }
 
+
+
+/* ==========================================================================
+   LUMÉA — Client readability revision 2026-09-02
+   Small labels / support text only
+   ========================================================================== */
+
+/* Hero campaign labels */
+.hero-v2 .hero-campaign-top,
+.hero-v2 .hero-campaign-foot{
+  font-size:16px;
+  line-height:1.4;
+  letter-spacing:.12em;
+}
+
+.hero-v2 .hero-campaign-mark{
+  font-size:16px;
+}
+
+.hero-v2 .hero-campaign-caption{
+  font-size:15px;
+}
+
+.hero-v2 .hero-editorial-no{
+  font-size:16px;
+}
+
+.hero-v2 .hero-editorial-desc{
+  font-size:16px;
+  line-height:1.85;
+}
+
+.hero-v2 .hero-editorial-primary,
+.hero-v2 .hero-editorial-link{
+  font-size:15px;
+}
+
+/* Section links and product metadata */
+.section-head-link{
+  font-size:15px;
+}
+
+.product-card-num,
+.product-card-badge,
+.product-card-tag{
+  font-size:14px;
+}
+
+.product-card-price,
+.product-card-link{
+  font-size:14px;
+}
+
+/* Category support text */
+.cat-num,
+.cat-name-zh,
+.cat-desc{
+  font-size:15px;
+}
+
+/* Mobile/tablet: keep hierarchy readable without overgrowing */
+@media(max-width:860px){
+  .hero-v2 .hero-campaign-top,
+  .hero-v2 .hero-campaign-foot{
+    font-size:15px;
+  }
+
+  .hero-v2 .hero-editorial-desc{
+    font-size:15px;
+  }
+}
